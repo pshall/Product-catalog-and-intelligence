@@ -1,0 +1,106 @@
+Usage: python web2py.py
+
+web2py Web Framework startup script. ATTENTION: unless a password is specified
+(-a 'passwd') web2py will attempt to run a GUI. In this case command line
+options are ignored.
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -i IP, --ip=IP        IP address of the server (e.g., 127.0.0.1 or ::1);
+                        Note: This value is ignored when using the
+                        'interfaces' option.
+  -p PORT, --port=PORT  port of server (8000)
+  -G GAE, --GAE=GAE     '-G configure' will create app.yaml and gaehandler.py
+  -a PASSWORD, --password=PASSWORD
+                        password to be used for administration (use -a
+                        "<recycle>" to reuse the last password))
+  -c SSL_CERTIFICATE, --ssl_certificate=SSL_CERTIFICATE
+                        file that contains ssl certificate
+  -k SSL_PRIVATE_KEY, --ssl_private_key=SSL_PRIVATE_KEY
+                        file that contains ssl private key
+  --ca-cert=SSL_CA_CERTIFICATE
+                        Use this file containing the CA certificate to
+                        validate X509 certificates from clients
+  -d PID_FILENAME, --pid_filename=PID_FILENAME
+                        file to store the pid of the server
+  -l LOG_FILENAME, --log_filename=LOG_FILENAME
+                        file to log connections
+  -n NUMTHREADS, --numthreads=NUMTHREADS
+                        number of threads (deprecated)
+  --minthreads=MINTHREADS
+                        minimum number of server threads
+  --maxthreads=MAXTHREADS
+                        maximum number of server threads
+  -s SERVER_NAME, --server_name=SERVER_NAME
+                        server name for the web server
+  -q REQUEST_QUEUE_SIZE, --request_queue_size=REQUEST_QUEUE_SIZE
+                        max number of queued requests when server unavailable
+  -o TIMEOUT, --timeout=TIMEOUT
+                        timeout for individual request (10 seconds)
+  -z SHUTDOWN_TIMEOUT, --shutdown_timeout=SHUTDOWN_TIMEOUT
+                        timeout on shutdown of server (5 seconds)
+  --socket-timeout=SOCKET_TIMEOUT
+                        timeout for socket (5 second)
+  -f FOLDER, --folder=FOLDER
+                        folder from which to run web2py
+  -v, --verbose         increase --test verbosity
+  -Q, --quiet           disable all output
+  -e, --errors_to_console
+                        log all errors to console
+  -D DEBUGLEVEL, --debug=DEBUGLEVEL
+                        set debug output level (0-100, 0 means all, 100 means
+                        none; default is 30)
+  -S APPNAME, --shell=APPNAME
+                        run web2py in interactive shell or IPython (if
+                        installed) with specified appname (if app does not
+                        exist it will be created). APPNAME like a/c/f (c,f
+                        optional)
+  -B, --bpython         run web2py in interactive shell or bpython (if
+                        installed) with specified appname (if app does not
+                        exist it will be created). Use combined with --shell
+  -P, --plain           only use plain python shell; should be used with
+                        --shell option
+  -M, --import_models   auto import model files; default is False; should be
+                        used with --shell option
+  -R PYTHON_FILE, --run=PYTHON_FILE
+                        run PYTHON_FILE in web2py environment; should be used
+                        with --shell option
+  -K SCHEDULER, --scheduler=SCHEDULER
+                        run scheduled tasks for the specified apps: expects a
+                        list of app names as -K app1,app2,app3 or a list of
+                        app:groups as -K app1:group1:group2,app2:group1 to
+                        override specific group_names. (only strings, no
+                        spaces allowed. Requires a scheduler defined in the
+                        models
+  -X, --with-scheduler  run schedulers alongside webserver, needs -K app1 and
+                        -a too
+  -T TEST_PATH, --test=TEST_PATH
+                        run doctests in web2py environment; TEST_PATH like
+                        a/c/f (c,f optional)
+  -C, --cron            trigger a cron run manually; usually invoked from a
+                        system crontab
+  --softcron            triggers the use of softcron
+  -Y, --run-cron        start the background cron process
+  -J, --cronjob         identify cron-initiated command
+  -L CONFIG, --config=CONFIG
+                        config file
+  -F PROFILER_DIR, --profiler=PROFILER_DIR
+                        profiler dir
+  -t, --taskbar         use web2py gui and run in taskbar (system tray)
+  --nogui               text-only, no GUI
+  -A ARGS, --args=ARGS  should be followed by a list of arguments to be passed
+                        to script, to be used with -S, -A must be the last
+                        option
+  --no-banner           Do not print header banner
+  --interfaces=INTERFACES
+                        listen on multiple addresses: "ip1:port1:key1:cert1:ca
+                        _cert1;ip2:port2:key2:cert2:ca_cert2;..."
+                        (:key:cert:ca_cert optional; no spaces; IPv6 addresses
+                        must be in square [] brackets)
+  --run_system_tests    runs web2py tests
+  --with_coverage       adds coverage reporting (needs --run_system_tests),
+                        python 2.7 and the coverage module installed. You can
+                        alter the default path setting the environmental var
+                        "COVERAGE_PROCESS_START". By default it takes
+                        gluon/tests/coverage.ini
